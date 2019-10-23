@@ -1,0 +1,8 @@
+body {margin: 0; display: grid; grid-template-areas: 'section'
+                                                     'form';
+grid-template-columns: 100vw; grid-template-rows: 90vh 10vh; font-family: 'Quicksand', sans-serif; background-color:#DBE0A5;}
+
+section { margin: 0; border: 3px solid rgb(85, 78, 78); opacity: 0.9;}
+form { border: 3px solid rgb(85, 78, 78); display: flex; justify-content: space-between; align-items: center; } 
+input { align-self: stretch; flex-grow: 1;}
+#send { align-self: stretch; font-family: 'Quicksand', sans-serif;}
