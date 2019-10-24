@@ -15,10 +15,12 @@ const wss = new webSocket.Server({
 wss.on('connection', function connection(ws){
     console.log('Client connected');
 
-    ws.on('message', function m(message){
+    ws.on('message', function (message){
+        message = JSON.parse(message);
+        console.log('msg:', message)
         const time = new Date();
         wss.clients.forEach(client => {
-            client.send(`[${time.toLocaleString()}] ${message}`)
+            client.send(`[${time.toLocaleString()}] ${message.name} diz: ${message.text}`)
             console.log('fununcia')
         });
     });

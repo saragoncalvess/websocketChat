@@ -1,3 +1,5 @@
+const name = window.prompt('Digite se nome');
+
 const client = new WebSocket(`ws://` + location.host );
 
 client.onmessage = function(e){
@@ -11,5 +13,6 @@ client.onmessage = function(e){
 document.querySelector('#chat').addEventListener('submit', e => {
     e.preventDefault();
     const text = document.querySelector('#chat-input').value;
-    client.send(text);
+    client.send(JSON.stringify({name, text}));
+    document.querySelector('#chat-input'). value = '';
 });
